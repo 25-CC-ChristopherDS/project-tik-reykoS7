@@ -6,7 +6,7 @@ window.addEventListener("scroll", () => {
 
   sections.forEach(sec => {
     const top = window.scrollY;
-    if (top >= sec.offsetTop - 150) {
+    if (top >= sec.offsetTop - 200) {
       current = sec.getAttribute("id");
     }
   });
@@ -19,7 +19,6 @@ window.addEventListener("scroll", () => {
   });
 });
 
-// ANIMASI REVEAL
 const reveals = document.querySelectorAll(".reveal");
 
 function revealOnScroll() {
@@ -35,3 +34,10 @@ function revealOnScroll() {
 
 window.addEventListener("scroll", revealOnScroll);
 revealOnScroll();
+
+const menuToggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector("nav");
+
+menuToggle.addEventListener("click", () => {
+  nav.classList.toggle("show");
+});

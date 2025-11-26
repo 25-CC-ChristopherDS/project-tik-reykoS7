@@ -18,7 +18,9 @@ body {
   color: var(--dark);
 }
 
-/* TOP BAR */
+/* =========================================
+   HEADER
+========================================= */
 header {
   background: linear-gradient(90deg, var(--primary), var(--secondary));
   padding: 20px 40px;
@@ -35,6 +37,12 @@ header {
 header .logo {
   font-size: 24px;
   font-weight: 700;
+}
+
+/* NAVIGATION */
+nav {
+  display: flex;
+  align-items: center;
 }
 
 nav a {
@@ -55,7 +63,17 @@ nav a.active {
   font-weight: 600;
 }
 
-/* HERO */
+/* MOBILE MENU BUTTON */
+.menu-toggle {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+}
+
+/* =========================================
+   HERO
+========================================= */
 .hero {
   display: flex;
   align-items: center;
@@ -82,7 +100,9 @@ nav a.active {
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-/* SECTION */
+/* =========================================
+   SECTION
+========================================= */
 .section {
   padding: 60px 40px;
   background: rgba(255,255,255,0.3);
@@ -134,6 +154,7 @@ nav a.active {
   box-shadow: 0 4px 18px rgba(0,0,0,0.06);
 }
 
+/* FOOTER */
 footer {
   background: var(--secondary);
   padding: 30px;
@@ -142,7 +163,9 @@ footer {
   margin-top: 40px;
 }
 
-/* ANIMASI SCROLL */
+/* =========================================
+   SCROLL ANIMATION
+========================================= */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -152,4 +175,68 @@ footer {
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+/* TABLET */
+@media (max-width: 992px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero img {
+    width: 70%;
+    margin-top: 30px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  nav {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: var(--secondary);
+    width: 200px;
+    flex-direction: column;
+    padding: 20px;
+    display: none;
+  }
+
+  nav a {
+    margin: 10px 0;
+    display: block;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav.show {
+    display: flex;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .hero img {
+    width: 90%;
+  }
+
+  header {
+    padding: 15px 20px;
+  }
 }
